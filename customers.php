@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
                 break;
         }
-        
+        dshfdshfg
         // Redirect to prevent form resubmission
         header(header: "Location: customers.php");
         exit();
