@@ -14,7 +14,7 @@ if (!$conn) {
 }
 
 /* -----------------------------
-   CREATE CATEGORY TABLE
+   CREATE CATEGORY TABLE IF NOT EXISTS
 ------------------------------*/
 $createCategoryTableSql = "
 CREATE TABLE IF NOT EXISTS tbl_category (
@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS tbl_category (
 )";
 
 if (!mysqli_query($conn, $createCategoryTableSql)) {
-    echo "Table creation error: " . mysqli_error($conn);
+    // Don't echo here to avoid header errors
+    error_log("Table creation error: " . mysqli_error($conn));
 }
 ?>
